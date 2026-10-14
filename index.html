@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Biên bản bắt bệnh — Ohayo Studio | NGỌT Studio Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0A0A; --cream:#F5F0E8; --gold:#C9A84C; --gold-light:#E8C96A; --gold-dark:#8C6D2A;
+  --warm-gray:#8A7F74; --steel:#3A4A5C; --steel-light:#6E8698; --forest:#2A4A3A;
+  --surface:#12151A; --surface-2:#1A1F26; --alert:#A8756A;
+  --line:rgba(201,168,76,.18); --line-soft:rgba(245,240,232,.10);
+  --display:'Playfair Display',serif; --body:'Be Vietnam Pro',sans-serif; --mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:15px;
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--ink)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,.95);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line);height:60px;
+  display:flex;align-items:center;padding:0 clamp(16px,4vw,36px);gap:18px}
+.nb{display:flex;align-items:center;gap:9px;flex-shrink:0;text-decoration:none}
+.nb svg{width:24px;height:24px;color:var(--gold)}
+.nb b{font-family:var(--display);font-size:16px;color:var(--cream);font-weight:700}
+.nb span{font-family:var(--mono);font-size:8px;letter-spacing:.16em;color:var(--warm-gray);
+  text-transform:uppercase;display:block;margin-top:-2px}
+.nl{margin-left:auto;display:flex;gap:3px;overflow-x:auto;scrollbar-width:none}
+.nl::-webkit-scrollbar{display:none}
+.nl a{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--warm-gray);text-decoration:none;padding:6px 9px;border-radius:2px;
+  transition:.2s;white-space:nowrap}
+.nl a:hover{color:var(--cream);background:rgba(245,240,232,.06)}
+.nl a.on{color:var(--gold)}
+.nbg{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--gold);
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;padding:7px 12px;cursor:pointer;border-radius:2px}
+@media(max-width:1000px){
+  .nl{display:none}.nbg{display:block}
+  .nl.show{display:flex;position:fixed;top:60px;left:0;right:0;flex-direction:column;
+    background:rgba(10,10,10,.99);border-bottom:1px solid var(--line);padding:12px;gap:4px;
+    max-height:calc(100vh - 60px);overflow-y:auto}
+}
+
+.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+
+/* ── HERO ── */
+header{padding:100px 0 10px;position:relative;isolation:isolate}
+header::before{content:'';position:absolute;inset:-40px 0 0;pointer-events:none;z-index:-1;
+  background:radial-gradient(ellipse 50% 60% at 80% 35%,rgba(58,74,92,.35),transparent 70%),
+             radial-gradient(ellipse 40% 50% at 10% 70%,rgba(201,168,76,.09),transparent 70%)}
+.kick{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:13px;margin-bottom:20px;flex-wrap:wrap}
+.kick::before{content:'';width:32px;height:1px;background:var(--gold);flex-shrink:0}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5.2vw,52px);line-height:1.08;margin-bottom:18px}
+h1 em{font-style:italic;color:var(--gold)}
+.lede{color:#D4CECC;font-size:16px;max-width:66ch;line-height:1.8;margin-bottom:13px}
+.lede b{color:var(--cream);font-weight:600}
+.stance{font-family:var(--display);font-style:italic;font-size:17px;color:var(--gold-light);
+  border-left:2px solid var(--gold);padding:6px 0 6px 16px;margin:24px 0 0;max-width:62ch;line-height:1.55}
+
+/* ── ROADMAP ── */
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:2px;margin:34px 0 0;overflow:hidden}
+.road div{background:var(--ink);padding:18px 16px}
+.road .rn{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--steel-light);margin-bottom:8px}
+.road .rt{font-family:var(--display);font-size:18px;font-weight:700;color:var(--cream);line-height:1.25;margin-bottom:6px}
+.road .rd{font-size:12px;color:var(--warm-gray);line-height:1.55}
+@media(max-width:760px){.road{grid-template-columns:repeat(2,1fr)}}
+
+/* ── SECTION ── */
+section{padding:56px 0 0;scroll-margin-top:74px}
+.sh{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-soft);
+  padding-bottom:10px;margin-bottom:22px}
+.sh .no{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--gold);flex-shrink:0}
+.sh h2{font-family:var(--display);font-size:clamp(21px,3vw,30px);font-weight:700;color:var(--cream);line-height:1.2}
+.sh .tail{margin-left:auto;font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--steel-light);white-space:nowrap}
+@media(max-width:680px){.sh .tail{display:none}}
+
+p.body{color:#D4CECC;max-width:74ch;margin-bottom:15px;line-height:1.8}
+p.body b{color:var(--cream);font-weight:600}
+p.body .hl{color:var(--gold-light);font-weight:600}
+
+/* ── FACT GRID (01) ── */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);
+  border:1px solid var(--line-soft);border-radius:2px;overflow:hidden;margin-bottom:16px}
+.facts div{background:var(--surface);padding:17px 16px}
+.facts .fl{font-family:var(--mono);font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--warm-gray);margin-bottom:9px;line-height:1.4}
+.facts .fv{font-family:var(--display);font-size:24px;font-weight:700;color:var(--gold);line-height:1.05}
+.facts .fv.sm{font-size:19px}
+.facts .fv.alert{color:var(--alert)}
+.facts .fn{font-size:11px;color:var(--warm-gray);margin-top:6px;line-height:1.5}
+@media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+.saidlist{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+@media(max-width:760px){.saidlist{grid-template-columns:1fr}}
+.said{border:1px solid var(--line-soft);border-radius:2px;padding:20px;background:rgba(245,240,232,.02)}
+.said .sl{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--steel-light);margin-bottom:14px;display:block}
+.said ul{list-style:none}
+.said li{position:relative;padding-left:18px;margin-bottom:10px;font-size:13.5px;
+  color:#D4CECC;line-height:1.6}
+.said li:last-child{margin-bottom:0}
+.said li::before{content:'—';position:absolute;left:0;color:var(--warm-gray)}
+.said li b{color:var(--cream);font-weight:600}
+
+/* ── DIAGNOSIS CARD ── */
+.dcard{border:1px solid var(--line-soft);border-radius:2px;margin-bottom:18px;overflow:hidden;background:var(--surface)}
+.dcard.open{border-color:var(--line)}
+.dh{display:grid;grid-template-columns:auto 1fr auto;gap:0 18px;align-items:center;
+  padding:19px 22px;cursor:pointer;user-select:none;background:rgba(245,240,232,.03);transition:.25s}
+.dcard.open .dh{background:rgba(201,168,76,.09)}
+.dnum{font-family:var(--display);font-weight:900;font-size:30px;color:var(--gold);line-height:.9;
+  font-variant-numeric:tabular-nums}
+.dtt{font-family:var(--display);font-size:20px;font-weight:700;color:var(--cream);line-height:1.28}
+.dtt small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--steel-light);margin-top:6px;font-weight:400}
+.dx{font-family:var(--mono);font-size:17px;color:var(--warm-gray);transition:.3s;flex-shrink:0}
+.dcard.open .dx{transform:rotate(45deg);color:var(--gold)}
+.db{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.dcard.open .db{max-height:1400px}
+.dsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft)}
+@media(max-width:900px){.dsteps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.dsteps{grid-template-columns:1fr}}
+.dstep{background:var(--surface);padding:21px 19px;display:flex;flex-direction:column}
+.dstep .dl{font-family:var(--mono);font-size:8.5px;letter-spacing:.17em;text-transform:uppercase;
+  margin-bottom:13px;display:flex;align-items:center;gap:7px}
+.dstep .dl i{width:15px;height:15px;border-radius:50%;display:inline-flex;align-items:center;
+  justify-content:center;font-style:normal;font-size:9px;flex-shrink:0;font-family:var(--mono)}
+.dstep.s1 .dl{color:var(--cream)} .dstep.s1 .dl i{background:rgba(245,240,232,.16);color:var(--cream)}
+.dstep.s2 .dl{color:var(--steel-light)} .dstep.s2 .dl i{background:rgba(110,134,152,.28);color:var(--steel-light)}
+.dstep.s3 .dl{color:var(--alert)} .dstep.s3 .dl i{background:rgba(168,117,106,.25);color:var(--alert)}
+.dstep.s4 .dl{color:var(--gold)} .dstep.s4 .dl i{background:rgba(201,168,76,.22);color:var(--gold)}
+.dstep.s3{background:rgba(168,117,106,.07)}
+.dstep.s4{background:rgba(201,168,76,.07)}
+.dbig{font-family:var(--display);font-size:33px;font-weight:900;line-height:1;margin-bottom:11px;
+  font-variant-numeric:tabular-nums;color:var(--cream)}
+.dstep.s3 .dbig{color:var(--alert)}
+.dstep.s4 .dbig{color:var(--gold)}
+.dstep p{font-size:13px;color:#D4CECC;line-height:1.68;margin-bottom:9px}
+.dstep p:last-child{margin-bottom:0}
+.dstep ul{list-style:none;margin-top:2px}
+.dstep li{position:relative;padding-left:15px;margin-bottom:8px;font-size:13px;color:#D4CECC;line-height:1.6}
+.dstep li:last-child{margin-bottom:0}
+.dstep li::before{content:'·';position:absolute;left:3px;color:var(--steel-light);font-weight:700}
+.dstep b{color:var(--cream);font-weight:600}
+.dsrc{padding:14px 22px;background:rgba(58,74,92,.2);border-top:1px solid var(--line-soft);
+  font-family:var(--mono);font-size:10.5px;color:var(--gold);line-height:1.65}
+.dsrc::before{content:'ANH MINH CHIA SẺ · ';color:var(--warm-gray);letter-spacing:.14em;font-size:8.5px}
+.hint{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--steel-light);margin-bottom:16px}
+
+/* ── SPLIT BAR ── */
+.split{border:1px solid rgba(110,134,152,.3);background:rgba(58,74,92,.18);
+  border-radius:2px;padding:24px;margin:22px 0}
+.split .sph{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--steel-light);margin-bottom:20px}
+.sprow{display:grid;grid-template-columns:150px 1fr 110px;gap:14px;align-items:center;margin-bottom:12px}
+.sprow:last-of-type{margin-bottom:0}
+.sprow .spl{font-size:13px;color:#D4CECC;line-height:1.4}
+.spbar{height:28px;background:rgba(245,240,232,.05);border-radius:2px;overflow:hidden}
+.spbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold))}
+.spbar i.dim{background:rgba(110,134,152,.55)}
+.spbar i.lost{background:rgba(168,117,106,.4)}
+.spv{font-family:var(--mono);font-size:12.5px;color:var(--gold);text-align:right;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.spv.dim{color:var(--steel-light)} .spv.lost{color:var(--alert)}
+@media(max-width:640px){.sprow{grid-template-columns:1fr;gap:5px}.spv{text-align:left}}
+.spnote{margin-top:18px;padding-top:16px;border-top:1px solid rgba(110,134,152,.25);
+  font-size:13.5px;color:#D4CECC;line-height:1.7}
+.spnote b{color:var(--gold-light)}
+
+/* ── CALLOUT ── */
+.callout{background:var(--surface);border-left:3px solid var(--gold);padding:19px 21px;
+  margin:20px 0;border-radius:0 2px 2px 0}
+.callout .cl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:10px}
+.callout p{color:var(--cream);font-size:15px;line-height:1.78;margin-bottom:10px}
+.callout p:last-child{margin-bottom:0}
+.callout.steel{border-left-color:var(--steel-light);background:rgba(58,74,92,.2)}
+.callout.steel .cl{color:var(--steel-light)}
+.callout.alert{border-left-color:var(--alert);background:rgba(168,117,106,.07)}
+.callout.alert .cl{color:var(--alert)}
+
+/* ── PRIORITY ── */
+.prio{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+@media(max-width:900px){.prio{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.prio{grid-template-columns:1fr}}
+.pc{border:1px solid var(--line-soft);border-radius:2px;padding:19px;background:var(--surface);
+  position:relative;overflow:hidden}
+.pc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--steel-light)}
+.pc.p1::before{background:var(--gold)}
+.pc .po{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--steel-light);margin-bottom:10px}
+.pc.p1 .po{color:var(--gold)}
+.pc h4{font-family:var(--display);font-size:17px;font-weight:700;color:var(--cream);line-height:1.3;margin-bottom:9px}
+.pc p{font-size:12.5px;color:#D4CECC;line-height:1.65}
+.pc .pw{font-family:var(--mono);font-size:10px;color:var(--gold);margin-top:11px;
+  padding-top:10px;border-top:1px solid var(--line-soft);display:block;line-height:1.5}
+
+/* ── CALCULATOR ── */
+.calc{border:1px solid var(--gold);border-radius:2px;background:rgba(201,168,76,.05);
+  padding:26px;margin:24px 0}
+.calc .ch{font-family:var(--display);font-size:21px;font-weight:700;color:var(--cream);margin-bottom:7px}
+.calc .cs{font-size:13.5px;color:var(--warm-gray);margin-bottom:22px;line-height:1.7;max-width:72ch}
+.calc .cs b{color:#D4CECC}
+.calc label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.calc label .cv{font-family:var(--display);font-size:30px;font-weight:900;
+  font-variant-numeric:tabular-nums;letter-spacing:0;vertical-align:-4px;margin:0 3px}
+.calc input[type=range]{width:100%;accent-color:var(--gold);height:4px;margin-bottom:7px;cursor:pointer}
+.crow{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;
+  color:var(--warm-gray);margin-bottom:22px;gap:8px}
+.cout{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:2px;overflow:hidden}
+@media(max-width:780px){.cout{grid-template-columns:repeat(2,1fr)}}
+.cout div{background:var(--ink);padding:17px 15px}
+.cout .cl2{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--warm-gray);margin-bottom:9px;line-height:1.45}
+.cout .cvv{font-family:var(--display);font-size:26px;font-weight:700;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--gold)}
+.cout .cn{font-size:11px;color:var(--warm-gray);margin-top:7px;line-height:1.5}
+.cbadge{margin-top:18px;padding:14px 17px;border:1px solid var(--line);background:var(--surface);
+  border-radius:2px;font-size:14px;color:var(--cream);line-height:1.7}
+.cbadge b{color:var(--gold-light)}
+
+/* ── TABLE ── */
+table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:13.5px}
+th{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);font-weight:400}
+td{padding:11px 12px;border-bottom:1px solid rgba(245,240,232,.07);color:#D4CECC;
+  vertical-align:top;line-height:1.6}
+td b{color:var(--cream);font-weight:600}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.emph td{background:rgba(201,168,76,.07);color:var(--cream)}
+tr.emph td b{color:var(--gold-light)}
+tr.warn td{background:rgba(168,117,106,.10)}
+tr.warn td b{color:var(--alert)}
+@media(max-width:620px){table{font-size:12.5px}th,td{padding:9px 8px}}
+
+/* ── PACKAGE COMPARE ── */
+.pk{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+@media(max-width:820px){.pk{grid-template-columns:1fr}}
+.pkc{border:1px solid var(--line-soft);border-radius:2px;overflow:hidden;background:var(--surface);
+  display:flex;flex-direction:column}
+.pkc.reco{border-color:var(--gold)}
+.pkh{padding:22px;border-bottom:1px solid var(--line-soft);position:relative}
+.pkc.reco .pkh{background:rgba(201,168,76,.09)}
+.pkc:not(.reco) .pkh{background:rgba(58,74,92,.22)}
+.pkt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--steel-light);margin-bottom:11px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.pkc.reco .pkt{color:var(--gold)}
+.pkt em{font-style:normal;font-size:8.5px;letter-spacing:.14em;color:var(--ink);
+  background:var(--gold);padding:2px 9px;border-radius:40px}
+.pkc h3{font-family:var(--display);font-size:23px;font-weight:700;color:var(--cream);
+  line-height:1.24;margin-bottom:11px}
+.pkprice{font-family:var(--display);font-size:34px;font-weight:900;color:var(--gold);
+  line-height:1;font-variant-numeric:tabular-nums}
+.pkprice small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--warm-gray);
+  font-weight:400;text-transform:uppercase;display:block;margin-top:8px}
+.pkc:not(.reco) .pkprice{color:var(--steel-light)}
+.pkline{font-family:var(--display);font-style:italic;font-size:17px;color:var(--gold-light);
+  padding:18px 22px;border-bottom:1px solid var(--line-soft);line-height:1.5}
+.pkc:not(.reco) .pkline{color:var(--steel-light)}
+.pkb{padding:20px 22px;flex:1}
+.pkrow{display:grid;grid-template-columns:96px 1fr;gap:13px;padding:10px 0;
+  border-bottom:1px solid rgba(245,240,232,.06);align-items:start}
+.pkrow:last-child{border-bottom:none;padding-bottom:0}
+.pkrow .k{font-family:var(--mono);font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--warm-gray);padding-top:3px}
+.pkrow .v{font-size:13.5px;color:#D4CECC;line-height:1.65}
+.pkrow .v b{color:var(--cream);font-weight:600}
+@media(max-width:560px){.pkrow{grid-template-columns:1fr;gap:4px}.pkrow .k{padding-top:0}}
+
+/* ── SELF TEST ── */
+.test{border:1px solid rgba(110,134,152,.32);background:rgba(58,74,92,.18);border-radius:2px;
+  padding:26px;margin:24px 0}
+.test .th2{font-family:var(--display);font-size:21px;font-weight:700;color:var(--cream);margin-bottom:8px}
+.test .ts{font-size:13.5px;color:var(--warm-gray);margin-bottom:20px;line-height:1.7;max-width:70ch}
+.tq{display:flex;gap:14px;align-items:flex-start;padding:15px 17px;border:1px solid var(--line-soft);
+  cursor:pointer;transition:.22s;background:rgba(10,10,10,.35);user-select:none;margin-bottom:10px;border-radius:2px}
+.tq:hover{border-color:var(--line)}
+.tq.on{border-color:var(--gold);background:rgba(201,168,76,.09)}
+.tbox{width:19px;height:19px;border:1px solid var(--warm-gray);border-radius:2px;flex-shrink:0;
+  margin-top:2px;display:flex;align-items:center;justify-content:center;transition:.2s;
+  font-size:12px;color:transparent;font-family:var(--mono)}
+.tq.on .tbox{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.tq span{font-size:14px;color:#D4CECC;line-height:1.6}
+.tq.on span{color:var(--cream)}
+.tres{margin-top:20px;padding:19px 21px;border:1px solid var(--gold);background:rgba(201,168,76,.08);
+  border-radius:2px;font-size:14.5px;color:var(--cream);line-height:1.75}
+.tres b{color:var(--gold-light)}
+.tres .trh{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:10px}
+
+/* ── DELIVERABLES ── */
+.del{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
+@media(max-width:800px){.del{grid-template-columns:1fr}}
+.dl2{border:1px solid var(--line);border-radius:2px;padding:20px;background:rgba(201,168,76,.04)}
+.dl2.key{border-color:var(--gold);background:rgba(201,168,76,.09)}
+.dl2 .n{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--gold);margin-bottom:11px;
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.dl2 .n em{font-style:normal;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);background:var(--gold);padding:2px 8px;border-radius:40px;font-weight:500}
+.dl2 h4{font-family:var(--display);font-size:18px;font-weight:700;color:var(--cream);
+  line-height:1.3;margin-bottom:8px}
+.dl2 p{font-size:13px;color:#D4CECC;line-height:1.7}
+
+/* ── ASSUMPTIONS ── */
+.assump{border:1px dashed rgba(245,240,232,.2);border-radius:2px;padding:21px;margin:22px 0;
+  background:rgba(245,240,232,.02)}
+.assump .al{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--steel-light);margin-bottom:13px;display:block}
+.assump table{margin:0;font-size:12.5px}
+.assump td{padding:8px 10px}
+.tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  padding:2px 7px;border-radius:40px;white-space:nowrap}
+.tag.real{background:rgba(201,168,76,.18);color:var(--gold-light)}
+.tag.est{background:rgba(110,134,152,.22);color:var(--steel-light)}
+
+/* ── FOOTER ── */
+footer{margin-top:60px;border-top:1px solid var(--line);padding:36px 0 60px}
+.fgrid{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:end}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+footer h3{font-family:var(--display);font-size:24px;font-weight:700;color:var(--cream);margin-bottom:11px}
+footer p{font-size:14px;color:#D4CECC;line-height:1.78;max-width:58ch}
+.contact{font-family:var(--mono);font-size:13px;color:var(--gold);line-height:2;letter-spacing:.02em}
+.contact b{display:block;font-family:var(--display);font-size:19px;color:var(--cream);
+  letter-spacing:0;margin-bottom:5px;font-weight:700}
+.contact i{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--warm-gray);font-style:normal;margin-bottom:9px}
+.sig{display:flex;align-items:center;gap:13px;margin-top:28px;padding-top:19px;
+  border-top:1px solid var(--line-soft)}
+.sig svg{width:30px;color:var(--gold);flex-shrink:0}
+.sig div{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--warm-gray);line-height:1.7}
+.sig em{font-family:var(--display);font-style:italic;font-size:14px;color:var(--gold);
+  letter-spacing:0;text-transform:none;display:block;margin-top:5px}
+
+.topb{position:fixed;right:20px;bottom:20px;width:40px;height:40px;border:1px solid var(--line);
+  background:rgba(10,10,10,.92);color:var(--gold);cursor:pointer;border-radius:2px;font-size:15px;
+  opacity:0;pointer-events:none;transition:.25s;z-index:180}
+.topb.show{opacity:1;pointer-events:auto}
+.topb:hover{background:var(--gold);color:var(--ink)}
+
+@media print{
+  nav,.topb{display:none}
+  body{background:#fff;color:#111}
+  header{padding-top:12px}header::before{display:none}
+  section{padding-top:26px;break-inside:avoid}
+  h1,.sh h2,.dtt,.dl2 h4,footer h3,.pkc h3,.calc .ch,.pc h4,.test .th2{color:#111}
+  p.body,td,.dstep p,.dstep li,.dl2 p,footer p,.cout .cn,.lede,.spnote,.pkrow .v,.said li,.pc p{color:#333}
+  .facts div,.cout div,.dcard,.dstep,.pkc,.said,.pc{background:#fafafa}
+  .calc,.callout,.dl2,.assump,.split,.test{background:#fafafa}
+  .facts .fv,.cout .cvv,.pkprice,.dnum,.dbig{color:#8C6D2A}
+  .db{max-height:none!important}.dx{display:none}
+  .calc input,.crow{display:none}
+}
+
+:root{--alert:#B5766A;--good:#7FA88B}
+/* ── MINI NUMBERS ── */
+.fv.good{color:var(--good)}
+.eq{font-family:var(--mono);font-size:10px;color:var(--steel-light);margin-top:6px;letter-spacing:.04em}
+/* ── P&L STRIP ── */
+.pl{border:1px solid var(--line-soft);background:var(--surface);border-radius:2px;padding:22px;margin:18px 0}
+.pl .plh{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-light);margin-bottom:16px}
+.plbar{display:flex;height:40px;border-radius:2px;overflow:hidden;border:1px solid var(--line-soft)}
+.plbar div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.04em;color:var(--ink);white-space:nowrap;overflow:hidden;cursor:default;transition:filter .2s}
+.plbar div:hover{filter:brightness(1.15)}
+.pllg{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px}
+.pllg span{font-size:12px;color:#D4CECC;display:flex;align-items:center;gap:7px}
+.pllg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.plnote{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:13.5px;color:#D4CECC;line-height:1.7}
+.plnote b{color:var(--gold-light)}
+/* ── TIME BARS ── */
+.tb{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:760px){.tb{grid-template-columns:1fr}}
+.tbc{border:1px solid rgba(110,134,152,.3);background:rgba(58,74,92,.16);border-radius:2px;padding:20px}
+.tbc .who{font-family:var(--display);font-size:18px;font-weight:700;color:var(--cream);margin-bottom:3px}
+.tbc .role{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);margin-bottom:16px}
+.tr{display:grid;grid-template-columns:1fr 48px;gap:10px;align-items:center;margin-bottom:9px}
+.tr .tl{font-size:12.5px;color:#D4CECC;margin-bottom:5px}
+.tr .tbar{height:8px;background:rgba(245,240,232,.06);border-radius:2px;overflow:hidden}
+.tr .tbar i{display:block;height:100%;background:var(--steel-light)}
+.tr.keep .tbar i{background:var(--gold)}
+.tr.move .tbar i{background:var(--alert)}
+.tr .tp{font-family:var(--mono);font-size:12px;color:var(--cream);text-align:right}
+.tkey{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.tkey span{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--warm-gray);display:flex;align-items:center;gap:6px}
+.tkey i{width:9px;height:9px;border-radius:2px;display:inline-block}
+/* ── PLANNER ── */
+.mt{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;overflow:hidden;margin:20px 0 0}
+@media(max-width:760px){.mt{grid-template-columns:repeat(2,1fr)}.mt button:first-child{grid-column:1/-1}}
+.mt button{background:var(--ink);border:0;padding:15px 14px;text-align:left;cursor:pointer;color:var(--warm-gray);transition:.2s;font-family:var(--body)}
+.mt button:hover{background:rgba(245,240,232,.04)}
+.mt button.on{background:rgba(201,168,76,.12)}
+.mt .mn{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);display:block;margin-bottom:6px}
+.mt .mv{font-family:var(--display);font-size:22px;font-weight:700;color:var(--cream);display:block;line-height:1}
+.mt button.on .mv{color:var(--gold)}
+.mt .md{font-size:11px;display:block;margin-top:6px;line-height:1.4}
+.mwork{border:1px solid var(--line);border-top:0;background:var(--surface);padding:16px 20px;font-size:13.5px;color:#D4CECC;line-height:1.7}
+.mwork b{color:var(--gold-light)}
+.pln{border:1px solid var(--gold);border-radius:2px;background:rgba(201,168,76,.05);padding:24px;margin:18px 0}
+.sl3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:22px}
+@media(max-width:760px){.sl3{grid-template-columns:1fr}}
+.sl3 label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.sl3 label .cv{font-family:var(--display);font-size:26px;font-weight:900;letter-spacing:0;color:var(--cream);vertical-align:-3px;margin-left:4px}
+.sl3 input{width:100%;accent-color:var(--gold);cursor:pointer}
+.sl3 .sn{font-size:11px;color:var(--warm-gray);margin-top:4px;line-height:1.5}
+.po4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+@media(max-width:780px){.po4{grid-template-columns:repeat(2,1fr)}}
+.po4 div{background:var(--ink);padding:16px 14px}
+.po4 .k{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:8px}
+.po4 .v{font-family:var(--display);font-size:26px;font-weight:700;color:var(--gold);line-height:1.05;font-variant-numeric:tabular-nums}
+.po4 .n{font-size:11px;color:var(--warm-gray);margin-top:6px;line-height:1.5}
+.staff{margin-top:18px}
+.staff table{margin:0}
+.staff td.num b{color:var(--gold-light)}
+.cap{margin-top:14px;height:10px;background:rgba(245,240,232,.06);border-radius:2px;overflow:hidden;position:relative}
+.cap i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));transition:width .3s}
+.capl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;color:var(--warm-gray);margin-top:6px}
+details.norm{margin-top:18px;border:1px dashed rgba(245,240,232,.2);border-radius:2px;padding:14px 18px}
+details.norm summary{cursor:pointer;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light)}
+details.norm .sl3{margin:16px 0 4px}
+/* ── OTHER PACKAGES ── */
+.oth{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
+@media(max-width:760px){.oth{grid-template-columns:1fr}}
+.oc{border:1px solid var(--line-soft);border-radius:2px;background:var(--surface);padding:20px;display:flex;flex-direction:column}
+.oc .ol{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);margin-bottom:9px}
+.oc h4{font-family:var(--display);font-size:19px;font-weight:700;color:var(--cream);line-height:1.3;margin-bottom:6px}
+.oc .op{font-family:var(--display);font-size:24px;font-weight:900;color:var(--gold);line-height:1}
+.oc .op small{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--warm-gray);font-weight:400;margin-left:6px}
+.oc p{font-size:13px;color:#D4CECC;line-height:1.65;margin-top:10px}
+.oc .ow{margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10px;color:var(--gold);line-height:1.5;border-top:1px solid var(--line-soft);margin-top:14px}
+.solves{list-style:none;margin-top:4px}
+.solves li{position:relative;padding-left:18px;margin-bottom:8px;font-size:13.5px;color:#D4CECC;line-height:1.6}
+.solves li::before{content:'✓';position:absolute;left:0;color:var(--good);font-size:12px}
+.solves li b{color:var(--cream)}
+
+/* ── ASSUMPTION BANNER ── */
+.note{display:flex;gap:12px;align-items:flex-start;border:1px dashed rgba(201,168,76,.45);background:rgba(201,168,76,.05);
+  padding:14px 18px;border-radius:2px;margin:22px 0 0;font-size:13.5px;color:#D4CECC;line-height:1.6}
+.note b{color:var(--gold-light)}
+.note i{font-family:var(--mono);font-style:normal;font-size:9px;letter-spacing:.16em;color:var(--ink);background:var(--gold);
+  padding:3px 8px;border-radius:2px;flex-shrink:0;margin-top:2px}
+/* ── 6-STEP CHAIN ── */
+.chain{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:20px 0 0}
+@media(max-width:860px){.chain{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.chain{grid-template-columns:repeat(2,1fr)}}
+.chain button{background:var(--surface);border:1px solid var(--line-soft);border-radius:2px;padding:14px 12px;text-align:left;
+  cursor:pointer;transition:.2s;position:relative;color:var(--cream);font-family:var(--body)}
+.chain button:hover{border-color:var(--line)}
+.chain button.on{border-color:var(--gold);background:rgba(201,168,76,.10)}
+.chain .cn{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--steel-light);display:block;margin-bottom:6px}
+.chain button.on .cn{color:var(--gold)}
+.chain .ct{font-family:var(--display);font-size:16px;font-weight:700;line-height:1.25;display:block}
+.chain.up button{opacity:.55}
+.chain.up button.lit{opacity:1;border-color:var(--alert);background:rgba(181,118,106,.08)}
+.cpane{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--surface);padding:20px 22px;margin-top:10px;border-radius:2px}
+.cpane .q{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.cpane h4{font-family:var(--display);font-size:20px;font-weight:700;color:var(--cream);margin-bottom:8px}
+.cpane p{font-size:14px;color:#D4CECC;line-height:1.7}
+.cpane p b{color:var(--cream)}
+.cpane .ex{margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:11.5px;color:var(--gold-light);line-height:1.7}
+.mode{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.mode button{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border:1px solid var(--line-soft);
+  background:transparent;color:var(--warm-gray);cursor:pointer;border-radius:2px;transition:.2s}
+.mode button.on{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
+.mode button.bad.on{border-color:var(--alert);color:var(--alert);background:rgba(181,118,106,.08)}
+/* ── TRACE ── */
+.trace{display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin:18px 0}
+@media(max-width:760px){.trace{grid-template-columns:1fr}}
+.tlist{display:grid;gap:8px;align-content:start}
+.tlist button{text-align:left;background:rgba(245,240,232,.02);border:1px solid var(--line-soft);border-radius:2px;padding:12px 14px;
+  color:#D4CECC;font-size:13.5px;cursor:pointer;transition:.2s;font-family:var(--body)}
+.tlist button:hover{border-color:var(--line);color:var(--cream)}
+.tlist button.on{border-color:var(--gold);color:var(--cream);background:rgba(201,168,76,.08)}
+.tlist button small{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-light);margin-top:3px}
+.tpath{border:1px solid rgba(110,134,152,.3);background:rgba(58,74,92,.16);border-radius:2px;padding:20px}
+.tpath .th{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);margin-bottom:14px}
+.tnode{display:flex;gap:12px;align-items:flex-start;padding:9px 0;position:relative}
+.tnode:not(:last-child)::after{content:'';position:absolute;left:11px;top:32px;bottom:-6px;width:1px;background:rgba(110,134,152,.45)}
+.tnode i{width:23px;height:23px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-style:normal;font-size:10px;background:rgba(110,134,152,.3);color:var(--cream)}
+.tnode.top i{background:var(--gold);color:var(--ink)}
+.tnode.me i{background:var(--alert);color:var(--ink)}
+.tnode div{font-size:13.5px;color:#D4CECC;line-height:1.55;padding-top:2px}
+.tnode div b{color:var(--cream)}
+.tnode div em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--gold-light);display:block;margin-top:2px}
+/* ── PILLARS ── */
+.pil{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+@media(max-width:860px){.pil{grid-template-columns:1fr}}
+.pl3{border:1px solid var(--line-soft);background:var(--surface);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
+.pl3 .ph{padding:18px 20px;border-bottom:1px solid var(--line-soft);background:rgba(58,74,92,.22)}
+.pl3.k .ph{background:rgba(201,168,76,.09)}
+.pl3 .pn{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);margin-bottom:8px}
+.pl3.k .pn{color:var(--gold)}
+.pl3 h4{font-family:var(--display);font-size:20px;font-weight:700;color:var(--cream);line-height:1.25}
+.pl3 .ps{font-size:12.5px;color:var(--warm-gray);margin-top:6px;line-height:1.55}
+.pl3 .pb{padding:16px 20px;flex:1}
+.pl3 .pg{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);margin:4px 0 8px}
+.pl3 ul{list-style:none;margin-bottom:10px}
+.pl3 li{position:relative;padding-left:15px;margin-bottom:6px;font-size:13px;color:#D4CECC;line-height:1.55}
+.pl3 li::before{content:'·';position:absolute;left:3px;color:var(--gold);font-weight:700}
+.pl3 li b{color:var(--cream)}
+.pl3 .pw2{padding:12px 20px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:10.5px;color:var(--gold);line-height:1.55;background:rgba(10,10,10,.3)}
+/* ── FORMULA CALC ── */
+.fx{font-family:var(--mono);font-size:11.5px;color:var(--steel-light);margin-top:6px;letter-spacing:.02em}
+.fx b{color:var(--gold-light);font-weight:500}
+.alloc{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
+.alloc .ah{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.arow{display:grid;grid-template-columns:150px 1fr 54px 80px;gap:12px;align-items:center;margin-bottom:10px}
+@media(max-width:640px){.arow{grid-template-columns:1fr 54px 70px}.arow input{grid-column:1/-1;order:3}}
+.arow span{font-size:13px;color:#D4CECC}
+.arow input{width:100%;accent-color:var(--gold)}
+.arow b{font-family:var(--mono);font-size:12px;color:var(--cream);text-align:right;font-weight:400}
+.arow em{font-family:var(--mono);font-size:12px;color:var(--gold);text-align:right;font-style:normal}
+.asum{font-family:var(--mono);font-size:11px;margin-top:8px;color:var(--good)}
+.asum.bad{color:var(--alert)}
+/* ── INVEST ── */
+.inv{border:1px solid var(--line);background:var(--surface);border-radius:2px;padding:24px;margin:22px 0}
+.inv .ih{font-family:var(--display);font-size:20px;font-weight:700;color:var(--cream);margin-bottom:6px}
+.inv .is{font-size:13.5px;color:var(--warm-gray);margin-bottom:18px;line-height:1.65}
+.ibar{display:grid;grid-template-columns:130px 1fr 92px;gap:12px;align-items:center;margin-bottom:12px}
+@media(max-width:640px){.ibar{grid-template-columns:1fr 80px}.ibar .ib{grid-column:1/-1;order:3}}
+.ibar span{font-size:13px;color:#D4CECC}
+.ib{height:26px;background:rgba(245,240,232,.05);border-radius:2px;overflow:hidden;position:relative}
+.ib i{display:block;height:100%;transition:width .3s}
+.ibar b{font-family:var(--mono);font-size:12px;text-align:right;font-weight:400;color:var(--cream)}
+.cmpt td.y{color:var(--good)}
+.cmpt td.n{color:var(--warm-gray)}
+.cmpt th:nth-child(2),.cmpt th:nth-child(3){text-align:center}
+.cmpt td:nth-child(2),.cmpt td:nth-child(3){text-align:center}
+
+
+/* ── ORG ── */
+.org{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+@media(max-width:900px){.org{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.org{grid-template-columns:1fr}}
+.oc2{border:1px solid var(--line-soft);background:var(--surface);border-radius:2px;padding:16px 16px 14px;position:relative}
+.oc2.hot{border-color:rgba(181,118,106,.55)}
+.oc2 .r{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light);margin-bottom:6px}
+.oc2 h4{font-family:var(--display);font-size:18px;font-weight:700;color:var(--cream);margin-bottom:10px}
+.oc2 .cnt{position:absolute;top:14px;right:14px;font-family:var(--display);font-size:26px;font-weight:900;color:rgba(201,168,76,.35);line-height:1}
+.oc2.hot .cnt{color:var(--alert)}
+.oc2 ul{list-style:none}
+.oc2 li{position:relative;padding-left:13px;margin-bottom:6px;font-size:12.5px;color:#D4CECC;line-height:1.5}
+.oc2 li::before{content:'·';position:absolute;left:2px;color:var(--gold);font-weight:700}
+.oc2 .kpi{margin-top:10px;padding-top:10px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:10.5px;color:var(--gold-light);line-height:1.6}
+/* ── WORKLOAD ── */
+.wl{border:1px solid var(--gold);border-radius:2px;background:rgba(201,168,76,.05);padding:24px;margin:18px 0}
+.wtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.wtabs button{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;border:1px solid var(--line-soft);
+  background:transparent;color:var(--warm-gray);cursor:pointer;border-radius:2px;transition:.2s}
+.wtabs button.on{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
+.wrow{display:grid;grid-template-columns:1fr 84px 84px 74px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(245,240,232,.06)}
+.wrow.hd{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-gray);border-bottom:1px solid var(--line)}
+.wrow span{font-size:13px;color:#D4CECC;line-height:1.4}
+.wrow input{width:100%;background:var(--ink);border:1px solid var(--line-soft);color:var(--cream);font-family:var(--mono);font-size:12px;
+  padding:6px 8px;border-radius:2px;text-align:right}
+.wrow input:focus{outline:none;border-color:var(--gold)}
+.wrow b{font-family:var(--mono);font-size:12px;color:var(--gold-light);text-align:right;font-weight:400}
+@media(max-width:560px){.wrow{grid-template-columns:1fr 60px 60px 56px;gap:6px}.wrow span{font-size:12px}}
+.wmeter{margin-top:18px;height:16px;background:rgba(245,240,232,.06);border-radius:2px;position:relative;overflow:hidden}
+.wmeter i{display:block;height:100%;transition:width .3s,background .3s}
+.wmeter u{position:absolute;top:0;bottom:0;width:2px;background:var(--cream);opacity:.7}
+.wml{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--warm-gray);margin-top:6px}
+/* ── TASK CARD ── */
+.tcard{border:1px solid var(--line);background:var(--surface);border-radius:2px;overflow:hidden;margin-top:12px}
+.tcf{display:grid;grid-template-columns:170px 1fr;border-bottom:1px solid var(--line-soft)}
+.tcf:last-child{border-bottom:0}
+.tcf .k{padding:11px 14px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-light);background:rgba(58,74,92,.18);display:flex;align-items:center;gap:8px}
+.tcf .k i{font-style:normal;color:var(--gold)}
+.tcf .v{padding:11px 16px;font-size:13.5px;color:#D4CECC;line-height:1.6}
+.tcf .v b{color:var(--cream)}
+.tcf.bad .v{color:var(--alert)}
+@media(max-width:620px){.tcf{grid-template-columns:1fr}}
+.smart{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+@media(max-width:700px){.smart{grid-template-columns:repeat(2,1fr)}}
+.smart div{border:1px solid rgba(127,168,139,.35);background:rgba(127,168,139,.06);border-radius:2px;padding:10px 12px}
+.smart b{display:block;font-family:var(--display);font-size:20px;color:var(--good);line-height:1}
+.smart span{font-size:11.5px;color:#D4CECC;line-height:1.45;display:block;margin-top:5px}
+.smart em{font-style:normal;display:block;font-family:var(--mono);font-size:10px;color:var(--gold-light);margin-top:5px;line-height:1.45}
+/* ── 2-MONTH ROAD ── */
+.road8{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;overflow:hidden;margin:18px 0}
+@media(max-width:760px){.road8{grid-template-columns:repeat(2,1fr)}}
+.road8 div{background:var(--surface);padding:16px}
+.road8 .w{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--gold);margin-bottom:6px}
+.road8 h5{font-family:var(--display);font-size:16px;font-weight:700;color:var(--cream);margin-bottom:8px;line-height:1.3}
+.road8 ul{list-style:none}
+.road8 li{font-size:12.5px;color:#D4CECC;line-height:1.5;margin-bottom:5px;padding-left:12px;position:relative}
+.road8 li::before{content:'·';position:absolute;left:2px;color:var(--steel-light);font-weight:700}
+.road8 .out{margin-top:8px;padding-top:8px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:10px;color:var(--gold-light);line-height:1.5}
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="nsc-mark" viewBox="0 0 1077 952">
+    <g transform="translate(0,952) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+      <path d="M4010 9509 c-127 -25 -214 -104 -288 -263 -28 -58 -79 -159 -115 -224 -35 -64 -110 -205 -168 -312 -194 -362 -228 -380 -729 -380 -428 0 -442 5 -632 197 -134 135 -183 164 -280 165 -122 2 -137 -9 -579 -437 -430 -417 -439 -427 -439 -536 0 -113 14 -136 214 -334 281 -277 280 -276 274 -822 -4 -332 -6 -363 -27 -431 -106 -356 -427 -615 -867 -702 -184 -36 -203 -41 -244 -69 -47 -31 -92 -91 -111 -146 -21 -60 -20 -988 0 -1060 35 -120 125 -176 341 -211 465 -74 777 -320 882 -696 18 -64 21 -110 25 -389 8 -506 3 -520 -264 -782 -200 -197 -223 -232 -223 -337 0 -112 8 -122 410 -518 412 -407 423 -416 550 -417 107 0 154 26 325 185 236 218 281 235 640 235 286 0 334 -9 485 -85 275 -139 500 -475 580 -865 26 -124 98 -214 205 -254 57 -21 65 -22 579 -19 l521 3 50 27 c84 44 175 164 175 230 0 50 78 277 134 393 133 272 326 451 577 537 93 31 97 32 324 36 362 6 422 -15 635 -223 165 -162 178 -170 290 -170 112 0 138 15 307 187 181 184 177 173 181 458 4 302 -25 377 -173 450 l-50 25 -2740 5 c-2251 4 -2747 8 -2780 19 -168 56 -287 183 -329 352 -24 96 -25 4617 -1 4718 43 179 185 319 364 357 51 11 172 14 547 14 607 0 610 1 713 176 235 398 603 682 1024 790 749 191 1459 -118 1823 -794 36 -68 110 -135 171 -156 67 -23 1422 -24 1499 -1 170 50 243 165 251 395 9 240 -41 369 -172 446 -83 48 -77 48 -745 54 l-635 5 -65 31 c-83 40 -150 99 -193 172 -94 156 -345 643 -403 780 -24 59 -119 144 -191 174 l-58 23 -775 2 c-426 0 -795 -3 -820 -8z M4521 8074 c-852 -143 -1285 -1119 -814 -1833 475 -720 1563 -725 2027 -10 576 889 -167 2018 -1213 1843z m346 -539 c654 -125 682 -1051 38 -1271 -390 -133 -820 171 -842 596 -22 423 375 757 804 675z M8166 7084 c-301 -73 -490 -402 -397 -694 l21 -65 -233 -227 -232 -227 -475 -1 c-440 0 -478 -2 -515 -19 -161 -74 -145 -305 25 -351 85 -23 1108 -8 1160 16 30 15 128 103 301 272 l256 251 49 -16 c81 -26 263 -24 346 5 391 135 508 625 218 911 -135 134 -339 190 -524 145z m227 -299 c94 -39 157 -134 157 -235 0 -286 -414 -346 -496 -72 -60 199 148 387 339 307z M2125 6873 c-46 -24 -66 -45 -86 -88 -18 -38 -19 -125 -19 -2200 0 -2432 -7 -2208 76 -2271 l37 -29 336 -3 336 -3 45 24 c93 49 84 -108 90 1566 l5 1474 70 -94 c304 -411 617 -844 1090 -1504 996 -1392 1000 -1397 1053 -1427 l47 -28 297 0 c353 0 369 4 419 102 18 36 19 88 19 1849 l0 1812 -42 -54 c-216 -277 -492 -457 -825 -539 l-43 -11 0 -727 -1 -727 -27 34 c-55 68 -317 426 -602 821 -134 185 -176 241 -575 765 -138 182 -319 420 -401 530 -548 732 -520 697 -576 726 -52 27 -673 29 -723 2z M10095 6175 c-166 -37 -304 -146 -378 -297 l-32 -67 -480 -3 -480 -3 -45 -24 c-25 -13 -115 -91 -200 -175 -85 -83 -214 -208 -286 -279 l-131 -127 -847 0 c-929 0 -883 3 -942 -61 -91 -98 -54 -262 69 -308 53 -20 1823 -15 1882 5 51 18 36 4 459 412 l189 182 411 0 411 0 30 -58 c167 -321 621 -382 880 -118 385 391 26 1040 -510 921z m249 -319 c159 -93 164 -325 9 -429 -217 -145 -482 97 -361 329 66 125 230 172 352 100z M8856 4835 c-134 -37 -270 -142 -336 -257 l-32 -58 -1067 0 -1067 0 -45 -29 c-118 -74 -112 -258 11 -321 39 -20 57 -20 1091 -23 923 -2 1053 -4 1060 -17 5 -8 21 -42 36 -75 214 -456 921 -370 1038 128 94 399 -289 762 -689 652z m223 -291 c109 -32 187 -143 179 -253 -20 -260 -367 -331 -482 -99 -98 197 90 416 303 352z M6335 3846 c-117 -53 -149 -211 -62 -304 54 -58 39 -57 582 -60 l500 -3 214 -208 214 -207 -17 -50 c-10 -27 -20 -89 -23 -139 -29 -507 573 -773 938 -415 419 411 -10 1082 -577 903 l-54 -17 -235 235 c-129 129 -252 243 -273 254 -48 26 -1152 36 -1207 11z m2080 -785 c94 -52 147 -161 126 -261 -46 -227 -344 -283 -464 -88 -136 220 111 475 338 349z"/>
+    </g>
+  </symbol>
+</svg>
+
+<nav>
+  <a class="nb" href="#top">
+    <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+    <div><b>NGỌT</b><span>Studio Consultancy</span></div>
+  </a>
+  <button class="nbg" id="burger">MENU</button>
+  <div class="nl" id="navList">
+    <a href="#s1">01 Anh Minh kể gì</a>
+    <a href="#s2">02 Bắt bệnh</a>
+    <a href="#s3">03 Bóc tách thời gian</a>
+    <a href="#s4">04 Gỡ nút thắt</a>
+    <a href="#s5">05 Phễu &amp; công suất</a>
+    <a href="#s6">06 Hai gói</a>
+    <a href="#s7">07 Các gói khác</a>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+<header>
+  <div class="kick">NGỌT — Studio Consultancy · Biên bản bắt bệnh sau buổi Tâm sự</div>
+  <h1>Đội của anh Minh không thiếu trách nhiệm.<br>Đội đang thiếu <em>bản mô tả việc</em>.</h1>
+  <p class="lede">Gửi anh Minh — <b>Ohayo Studio</b>. Bản này gói lại buổi Tâm sự theo 4 bước: <b>vấn đề · nguyên nhân · tác hại · giải pháp.</b> Đọc khoảng 7 phút.</p>
+  <div class="stance">Tôi không dạy nghề. Tôi cố vấn vận hành cho doanh nghiệp studio.</div>
+
+  <div class="road">
+    <div><div class="rn">VẤN ĐỀ</div><div class="rt">Không kiểm soát được tải việc</div><div class="rd">Giao việc khó nhận, khó làm đúng</div></div>
+    <div><div class="rn">NGUYÊN NHÂN</div><div class="rt">Đầu việc chưa quy chuẩn</div><div class="rd">Chưa quy hoạch việc theo bộ phận</div></div>
+    <div><div class="rn">TÁC HẠI</div><div class="rt">Rối · chồng chéo · sửa lại</div><div class="rd">Người giỏi cũng làm sai</div></div>
+    <div><div class="rn">GIẢI PHÁP</div><div class="rt">7 trường · 2 tháng</div><div class="rd">Mỗi việc một thẻ, mỗi thẻ một chủ</div></div>
+  </div>
+
+  <div class="note"><i>LƯU Ý</i><span>Các con số dưới đây dùng để <b>hiểu công thức</b>. Ô nào có thể kéo hoặc gõ — anh Minh thay bằng số thật của Ohayo, cả bản tự tính lại.</span></div>
+</header>
+
+<!-- ══ 01 ══ -->
+<section id="s1">
+  <div class="sh"><span class="no">01</span><h2>Anh Minh kể gì</h2><span class="tail">Từ buổi Tâm sự</span></div>
+
+  <div class="facts">
+    <div><div class="fl">Đội ngũ</div><div class="fv">4 người</div><div class="fn">chủ · sale + edit · photo · tập sự</div></div>
+    <div><div class="fl">Tin nhắn / tháng</div><div class="fv">~2.000</div><div class="eq">page 250/tuần + TikTok 30/ngày</div></div>
+    <div><div class="fl">Chuyển đổi tháng 8</div><div class="fv alert">~3,5%</div><div class="fn">tin nhắn → khách chốt</div></div>
+    <div><div class="fl">Marketing</div><div class="fv">~18tr</div><div class="fn">trung bình / tháng</div></div>
+  </div>
+
+  <div class="org">
+    <div class="oc2"><div class="cnt">5</div><div class="r">Chủ studio</div><h4>Anh Minh</h4>
+      <ul><li>Check quảng cáo</li><li>Tìm concept</li><li>Content ý tưởng</li><li>Check đầu ra sản phẩm</li><li>Check báo cáo sale 2–3 ngày/lần: tin rác, vì sao không chốt, khách phàn nàn gì</li></ul></div>
+    <div class="oc2 hot"><div class="cnt">5</div><div class="r">Sale + Edit video</div><h4>1 người · 2 nghề</h4>
+      <ul><li>Trả lời ~2.000 tin/tháng</li><li>Edit &amp; post video MXH</li><li>Post hình ảnh MXH</li><li>Take care &amp; quay video khách</li><li>Chuẩn bị đồ khách</li></ul>
+      <div class="kpi">Giá nhỉnh hơn thị trường 300–500k</div></div>
+    <div class="oc2"><div class="cnt">3</div><div class="r">Photo</div><h4>Chụp + hậu kỳ</h4>
+      <ul><li>Chụp <b>2 bộ/ngày</b></li><li>Retouch <b>20 ảnh/ngày</b></li><li>Dọn dẹp studio</li></ul></div>
+    <div class="oc2"><div class="cnt">2</div><div class="r">Tập sự</div><h4>Đang học</h4>
+      <ul><li>Take care &amp; phụ setup cho photo</li><li>Học retouch</li></ul></div>
+  </div>
+
+  <div class="saidlist">
+    <div class="said">
+      <span class="sl">Anh Minh tự nhận diện</span>
+      <ul>
+        <li>Giao việc <b>chưa đúng trọng tâm</b>, chưa dễ hiểu</li>
+        <li>Trách nhiệm thì các bạn <b>cơ bản có</b></li>
+        <li>Việc nhiều, <b>làm không hết</b></li>
+        <li>Muốn giao việc hiệu quả mà <b>không gây áp lực quá</b></li>
+      </ul>
+    </div>
+    <div class="said">
+      <span class="sl">Số tôi đọc ra</span>
+      <ul>
+        <li><b>~67 tin/ngày</b> dồn vào 1 người kiêm 4 việc khác</li>
+        <li>Chi marketing <b>~9k/tin</b> · <b>~257k/khách</b> chốt</li>
+        <li>~70 khách chốt/tháng vs <b>~60 slot chụp</b> của 1 photo (2 bộ × 30 ngày)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout steel">
+    <span class="cl">Đọc nhanh</span>
+    <p>Người có nhiều việc nhất lại đang giữ <b>cửa ra tiền</b> — tin nhắn. Đây không phải lỗi của bạn sale. Đây là dấu hiệu <b>việc chưa được quy hoạch</b>.</p>
+  </div>
+</section>
+
+<!-- ══ 02 ══ -->
+<section id="s2">
+  <div class="sh"><span class="no">02</span><h2>Bắt bệnh</h2><span class="tail">Một nút thắt · bốn bước</span></div>
+
+  <div class="dcard open">
+    <div class="dh"><span class="dnum">01</span>
+      <span class="dtt">Giao việc mà không có bản đồ việc<small>Quản lý nhân sự · Quy chuẩn đầu việc</small></span>
+      <span class="dx">+</span></div>
+    <div class="db">
+      <div class="dsteps">
+        <div class="dstep s1"><div class="dl"><i>1</i>Vấn đề</div>
+          <div class="dbig">0 / 4</div>
+          <p>người có <b>bản mô tả việc</b> viết ra.</p>
+          <p>Anh Minh <b>không thấy được tải việc</b> của từng bạn. Giao việc thì bạn khó nhận, khó làm đúng.</p></div>
+        <div class="dstep s2"><div class="dl"><i>2</i>Nguyên nhân</div>
+          <ul>
+            <li><b>Chưa quy chuẩn hoá</b> các đầu công việc</li>
+            <li><b>Chưa quy hoạch</b> việc theo bộ phận</li>
+            <li>Không biết việc nào nên giao cho ai, vì <b>không đo được thời gian</b> của từng việc</li>
+          </ul></div>
+        <div class="dstep s3"><div class="dl"><i>3</i>Tác hại</div>
+          <div class="dbig">3 lớp</div>
+          <ul>
+            <li><b>Rối việc</b></li>
+            <li>Các việc <b>chồng chéo</b> lên nhau</li>
+            <li><b>Làm sai, về sau lại sửa</b> — mất 2 lần thời gian</li>
+          </ul></div>
+        <div class="dstep s4"><div class="dl"><i>4</i>Giải pháp</div>
+          <div class="dbig">7 trường</div>
+          <p>Viết ra <b>các mảng bộ phận</b> → đưa việc về đúng bộ phận → mỗi việc trả lời <b>7 câu</b>, chuẩn <b>SMART</b>.</p></div>
+      </div>
+      <div class="dsrc">Giao việc chưa đúng trọng tâm · việc nhiều làm không hết · muốn giao hiệu quả mà không áp lực</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 ══ -->
+<section id="s3">
+  <div class="sh"><span class="no">03</span><h2>Bóc tách thời gian làm việc</h2><span class="tail">Gõ số · thanh tải tự tính</span></div>
+  <p class="body">Công thức: <b>Tải việc = Σ (số lần/ngày × phút/lần) ÷ 480 phút</b>. Số lần lấy từ buổi Tâm sự. <b>Phút/lần là giả định</b> — anh Minh bấm giờ thật 3 ngày rồi gõ vào.</p>
+
+  <div class="wl">
+    <div class="wtabs" id="wtabs">
+      <button data-p="1" class="on">Sale + Edit</button>
+      <button data-p="2">Photo</button>
+      <button data-p="3">Tập sự</button>
+      <button data-p="0">Anh Minh</button>
+    </div>
+    <div class="wrow hd"><span>Đầu việc</span><span style="text-align:right">Lần/ngày</span><span style="text-align:right">Phút/lần</span><span style="text-align:right">Phút</span></div>
+    <div id="wrows"></div>
+    <div class="wmeter"><i id="wbar"></i><u id="wline"></u></div>
+    <div class="wml"><span id="wtxt">–</span><span>vạch trắng = 8 tiếng</span></div>
+    <div class="cbadge" id="wmsg">–</div>
+  </div>
+
+  <div class="callout">
+    <span class="cl">Vì sao phải bóc tách trước khi giao</span>
+    <p>Giao thêm việc cho người đang ở 100% tải thì <b>việc cũ sẽ rơi</b> — thường là việc không ai đo. Bóc tách xong anh Minh biết <b>ai còn chỗ, việc nào nên chuyển, việc nào nên bỏ</b>.</p>
+  </div>
+</section>
+
+<!-- ══ 04 ══ -->
+<section id="s4">
+  <div class="sh"><span class="no">04</span><h2>Gỡ nút thắt</h2><span class="tail">Mục tiêu giải quyết trong 2 tháng</span></div>
+
+  <h3 style="font-family:var(--display);font-size:20px;font-weight:700;margin:0 0 4px">Một đầu việc chuẩn trả lời đủ 7 câu</h3>
+  <p class="body" style="font-size:14px">Bấm từng ví dụ — đây là việc thật đang có ở Ohayo.</p>
+  <div class="mode" id="tex">
+    <button data-x="0" class="on">Check báo cáo sale</button>
+    <button data-x="1">Edit &amp; post video</button>
+    <button data-x="2">Retouch ảnh</button>
+  </div>
+  <div class="tcard" id="tcard"></div>
+  <div class="smart" id="smart"></div>
+
+  <h3 style="font-family:var(--display);font-size:20px;font-weight:700;margin:34px 0 4px">Lộ trình 2 tháng</h3>
+  <div class="road8">
+    <div><div class="w">TUẦN 1–2</div><h5>Viết ra các mảng bộ phận</h5>
+      <ul><li>Liệt kê toàn bộ việc đang có</li><li><b>Bóc tách thời gian</b> từng bạn (phần 03)</li></ul>
+      <div class="out">Đầu ra: bản đồ việc + tải việc 4 người</div></div>
+    <div><div class="w">TUẦN 3–4</div><h5>Đưa việc về bộ phận</h5>
+      <ul><li>Mỗi việc về đúng 1 bộ phận, 1 người chủ</li><li>Chuẩn hoá theo 7 câu + SMART</li></ul>
+      <div class="out">Đầu ra: bộ thẻ việc chuẩn</div></div>
+    <div><div class="w">TUẦN 5–6</div><h5>Cách thức truyền thông</h5>
+      <ul><li>Giao việc bằng thẻ, không giao miệng</li><li>Không biết thì hỏi đúng người trên thẻ</li></ul>
+      <div class="out">Đầu ra: quy tắc giao – nhận việc</div></div>
+    <div><div class="w">TUẦN 7–8</div><h5>Đo &amp; chỉnh</h5>
+      <ul><li>So đầu ra với tiêu chuẩn trên thẻ</li><li>Chỉnh việc quá tải, việc chồng chéo</li></ul>
+      <div class="out">Đầu ra: đội tự chạy theo thẻ</div></div>
+  </div>
+
+  <div class="callout steel">
+    <span class="cl">Công cụ: nhập liệu để AI làm</span>
+    <p>Anh Minh <b>không cần tự gõ 50 thẻ việc</b>. Kể lại việc bằng lời → <b>Claude</b> chuyển thành thẻ 7 câu + SMART → anh duyệt. Phần anh giữ là <b>quyết định</b>, không phải đánh máy.</p>
+  </div>
+</section>
+
+<!-- ══ 05 ══ -->
+<section id="s5">
+  <div class="sh"><span class="no">05</span><h2>Phễu và công suất</h2><span class="tail">Vì sao giao việc đúng lại ra tiền</span></div>
+  <p class="body">Giao việc đúng giải phóng thời gian cho sale. Sale có thời gian thì <b>chuyển đổi lên</b>. Chuyển đổi lên thì <b>photo phải theo kịp</b>. Kéo thử:</p>
+
+  <div class="calc">
+    <div class="sl3">
+      <div><label>Tin nhắn / tháng <span class="cv" id="vTin">2000</span></label><input type="range" id="iTin" min="500" max="4000" step="50" value="2000"><div class="sn">page + TikTok</div></div>
+      <div><label>Chuyển đổi <span class="cv" id="vCr">3,5</span>%</label><input type="range" id="iCr" min="1" max="12" step="0.1" value="3.5"><div class="sn">tin nhắn → khách chốt</div></div>
+      <div><label>Marketing <span class="cv" id="vMkt">18</span>tr</label><input type="range" id="iMkt" min="5" max="60" step="1" value="18"><div class="sn">mỗi tháng</div></div>
+    </div>
+    <div class="sl3">
+      <div><label>Bộ chụp / photo / ngày <span class="cv" id="vBo">2</span></label><input type="range" id="iBo" min="1" max="6" step="1" value="2"></div>
+      <div><label>Số photo chụp chính <span class="cv" id="vPh">1</span></label><input type="range" id="iPh" min="1" max="4" step="1" value="1"><div class="sn">tập sự lên tay = +1</div></div>
+      <div><label>Ngày chụp / tháng <span class="cv" id="vNg">30</span></label><input type="range" id="iNg" min="20" max="31" step="1" value="30"><div class="sn">giả định</div></div>
+    </div>
+    <div class="cout">
+      <div><div class="cl2">Khách chốt</div><div class="cvv" id="oKh">–</div><div class="fx">= <b>tin</b> × <b>chuyển đổi</b></div></div>
+      <div><div class="cl2">Slot chụp</div><div class="cvv" id="oSl">–</div><div class="fx">= <b>bộ</b> × <b>photo</b> × <b>ngày</b></div></div>
+      <div><div class="cl2">Chi phí / tin</div><div class="cvv" id="oCt">–</div><div class="fx">= <b>MKT</b> ÷ <b>tin</b></div></div>
+      <div><div class="cl2">Chi phí / khách</div><div class="cvv" id="oCk">–</div><div class="fx">= <b>MKT</b> ÷ <b>khách</b></div></div>
+    </div>
+    <div class="cap"><i id="capBar"></i></div>
+    <div class="capl"><span>Khách chốt / slot chụp: <b id="capTxt" style="color:var(--gold)">–</b></span><span>100% = kín lịch</span></div>
+    <div class="cbadge" id="fMsg">–</div>
+  </div>
+</section>
+
+<!-- ══ 06 ══ -->
+<section id="s6">
+  <div class="sh"><span class="no">06</span><h2>Hai cách tôi đi cùng anh Minh</h2><span class="tail">Tự làm hay làm cùng</span></div>
+  <p class="body">Cả hai gói đều cho anh Minh <b>đủ giải pháp</b>. Khác nhau ở một chỗ: <b>ai cầm tay lắp</b>.</p>
+
+  <div class="pk">
+    <div class="pkc">
+      <div class="pkh">
+        <div class="pkt">Bậc 03 · đủ giải pháp, anh tự làm</div>
+        <h3>Khai thông điểm nghẽn</h3>
+        <div class="pkprice">6.000.000<small>đồng · trọn gói</small></div>
+      </div>
+      <div class="pkline">Tôi chỉ đường. Anh tự đi.</div>
+      <div class="pkb">
+        <div class="pkrow"><div class="k">Cách làm</div><div class="v"><b>2 buổi 1:1 × 2 tiếng.</b> Buổi 1 truy nguyên nhân. Buổi 2 giao phác đồ + cam kết triển khai.</div></div>
+        <div class="pkrow"><div class="k">Anh nhận</div><div class="v">Phác đồ chi tiết · lộ trình 30/60/90 ngày · ghi hình 2 buổi · sơ lược điểm nghẽn tiếp theo.</div></div>
+        <div class="pkrow"><div class="k">Anh tự làm</div><div class="v">Tự bóc tách thời gian, tự viết thẻ việc, tự huấn luyện đội giao – nhận việc <b>theo khung tôi giao</b>.</div></div>
+        <div class="pkrow"><div class="k">Rủi ro</div><div class="v">Thẻ việc viết lần đầu thường <b>quá chung</b> — đội đọc vẫn hiểu mỗi người một kiểu.</div></div>
+      </div>
+    </div>
+
+    <div class="pkc reco">
+      <div class="pkh">
+        <div class="pkt">Bậc 04 <em>hiệu quả cao hơn</em></div>
+        <h3>Kiến tạo Mắt xích Vận hành Studio</h3>
+        <div class="pkprice">18.000.000<small>đồng · đợt 6–8 tuần</small></div>
+      </div>
+      <div class="pkline">Tôi làm cùng anh.</div>
+      <div class="pkb">
+        <div class="pkrow"><div class="k">Cách làm</div><div class="v">Tôi <b>trực tiếp ngồi lắp cùng</b> 1–2 mắt xích nặng nhất, tới khi đội chạy được.</div></div>
+        <div class="pkrow"><div class="k">Với Ohayo</div><div class="v">Mắt xích 1: <b>Bản đồ việc + thẻ việc chuẩn</b> cho 4 người. Mắt xích 2: <b>Giao – nhận việc &amp; đo đầu ra</b>.</div></div>
+        <div class="pkrow"><div class="k">Anh nhận</div><div class="v">Biểu mẫu <b>may riêng</b> · <b>đào tạo trực tiếp</b> đội · theo sát, chỉnh khi lệch · bàn giao tài liệu.</div></div>
+        <div class="pkrow"><div class="k">Vì sao chắc hơn</div><div class="v">Thẻ việc được <b>thử ngay trên đội thật</b> và sửa trong tuần — không phải chờ 2 tháng mới biết sai.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <table class="cmpt">
+    <tr><th>Điểm so sánh</th><th>Khai thông</th><th>Mắt xích</th></tr>
+    <tr><td>Đủ khung giải pháp: bộ phận · 7 câu · SMART</td><td class="y">✓</td><td class="y">✓</td></tr>
+    <tr><td>Phác đồ + lộ trình 30/60/90</td><td class="y">✓</td><td class="y">✓</td></tr>
+    <tr><td>Tôi trực tiếp lắp cùng</td><td class="n">—</td><td class="y">✓</td></tr>
+    <tr><td>Thẻ việc may riêng cho 4 người</td><td class="n">—</td><td class="y">✓</td></tr>
+    <tr><td>Đào tạo đội giao – nhận việc</td><td class="n">—</td><td class="y">✓</td></tr>
+    <tr class="emph"><td><b>Ai chịu rủi ro làm sai lần đầu</b></td><td>Anh Minh</td><td>Hai người</td></tr>
+  </table>
+
+  <div class="inv">
+    <div class="ih">Khoản đầu tư này nhỏ cỡ nào so với cả hành trình?</div>
+    <div class="is">Thước đo gần nhất: <b>tiền marketing mỗi tháng</b> ở phần 05. Cả thanh = 100% của thước đo đó.</div>
+    <div class="sl3">
+      <div><label>Studio dùng hệ thống <span class="cv" id="vNam">3</span> năm</label><input type="range" id="iNam" min="1" max="10" step="1" value="3"><div class="sn">thẻ việc dùng mãi, chỉ cập nhật</div></div>
+      <div><label>Giá trung bình 1 khách <span class="cv" id="vGia">3,0</span>tr</label><input type="range" id="iGia" min="1" max="10" step="0.5" value="3"><div class="sn">giả định — anh Minh thay</div></div>
+    </div>
+    <div class="ibar"><span>Khai thông<br><small style="color:var(--warm-gray)">trên 1 tháng MKT</small></span><div class="ib"><i id="b1" style="background:var(--steel-light)"></i></div><b id="t1">–</b></div>
+    <div class="ibar"><span>Mắt xích<br><small style="color:var(--warm-gray)">trên 1 tháng MKT</small></span><div class="ib"><i id="b2" style="background:var(--gold)"></i></div><b id="t2">–</b></div>
+    <div class="ibar"><span>Khai thông<br><small style="color:var(--warm-gray)">chia theo tháng</small></span><div class="ib"><i id="b3" style="background:var(--steel-light)"></i></div><b id="t3">–</b></div>
+    <div class="ibar"><span>Mắt xích<br><small style="color:var(--warm-gray)">chia theo tháng</small></span><div class="ib"><i id="b4" style="background:var(--gold)"></i></div><b id="t4">–</b></div>
+    <div class="cbadge" id="iMsg">–</div>
+  </div>
+
+  <div class="test">
+    <div class="th2">Bốn câu để anh Minh tự chọn</div>
+    <div class="ts">Tick những câu <b>đúng với Ohayo lúc này</b>.</div>
+    <div class="tq" data-t><div class="tbox">✓</div><span>Tôi đã từng tự viết mô tả công việc cho nhân sự và đội làm theo được.</span></div>
+    <div class="tq" data-t><div class="tbox">✓</div><span>Mỗi tuần tôi dành ra được 4–5 tiếng để bóc tách và viết thẻ việc.</span></div>
+    <div class="tq" data-t><div class="tbox">✓</div><span>Đội của tôi quen làm theo quy trình viết ra, không chỉ nghe giao miệng.</span></div>
+    <div class="tq" data-t><div class="tbox">✓</div><span>Tôi đã từng tự triển khai một thay đổi trong đội và giữ nó chạy quá 3 tháng.</span></div>
+    <div class="tres" id="tres"><span class="trh">Kết quả</span>Tick để xem gói nào hợp hơn.</div>
+  </div>
+
+  <div class="callout">
+    <span class="cl">Phần tôi không cam kết</span>
+    <p>Tôi không cam kết doanh thu. Thứ tôi cam kết: <b>bản đồ việc đúng, thẻ việc rõ, cách đo rõ</b> — để anh Minh giao việc một lần là đội làm đúng.</p>
+  </div>
+</section>
+
+<!-- ══ 07 ══ -->
+<section id="s7">
+  <div class="sh"><span class="no">07</span><h2>Các gói khác của NSC</h2><span class="tail">Để anh biết đường đi tiếp</span></div>
+  <div class="oth">
+    <div class="oc"><div class="ol">Bậc 01 · Tâm sự</div><h4>Tâm sự cùng chủ Studio</h4><div class="op">500.000<small>/ buổi</small></div>
+      <p>Meet 1:1, 45–60 phút. Bắt bệnh, gọi tên vấn đề, định hướng thứ tự ưu tiên.</p>
+      <div class="ow">Anh Minh đã đi qua bước này — bản này là kết quả.</div></div>
+    <div class="oc"><div class="ol">Bậc 02 · Tự Xây · sắp ra mắt</div><h4>Tự Xây Nền Tảng Vận Hành Studio</h4><div class="op">2.900.000<small>/ giáo trình</small></div>
+      <p>Chọn 1 trong 3: 7 mảng vận hành · Tăng trưởng doanh thu · Hệ thống CRM. Video + tài liệu, sở hữu vĩnh viễn.</p>
+      <div class="ow">Hợp khi tự học tốt, có kỷ luật tự làm.</div></div>
+    <div class="oc"><div class="ol">Bậc 05 · Hoàn thiện hoá</div><h4>Hoàn thiện hoá hệ thống quản lý Studio</h4><div class="op">80.000.000<small>/ 3–4 tháng</small></div>
+      <p>Lắp trọn 7 mảng vận hành, bộ chỉ số quản trị, đào tạo từng bộ phận, nhịp họp tuần – tháng – quý.</p>
+      <div class="ow">Hợp khi studio đã đủ quy mô, muốn rút khỏi vận hành.</div></div>
+    <div class="oc"><div class="ol">Bậc 06 · Đồng hành</div><h4>Đồng hành</h4><div class="op">15%<small>doanh thu · thoả thuận riêng</small></div>
+      <p>Đội NSC nhận 4 phần việc: Digital Marketing · Sale online · Hỗ trợ hậu kỳ · Cố vấn vận hành.</p>
+      <div class="ow">Nhận studio từ 250tr/tháng.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div>
+      <h3>Bước tiếp theo</h3>
+      <p>Nếu bản này đọc đúng chỗ Ohayo đang vướng, anh nhắn tôi một câu kèm gói anh chọn. Trước buổi đầu, anh chuẩn bị <b style="color:var(--cream)">3 ngày bấm giờ thật</b> của 4 người theo bảng ở phần 03.</p>
+      <p style="margin-top:12px">Nếu chưa cần tôi lúc này — bản này là của anh, cứ giữ và dùng.</p>
+    </div>
+    <div class="contact">
+      <b>Đặng Thanh Quang</b>
+      <i>Founder &amp; Lead Consultant</i>
+      0916.206.866
+    </div>
+  </div>
+  <div class="sig">
+    <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+    <div>NGỌT — Studio Consultancy · Biên bản bắt bệnh sau buổi Tâm sự<br>Ohayo Studio — anh Văn Minh · 14.10.2026
+      <em>Đam mê dựng nghề, hệ thống giữ nghiệp.</em>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<button class="topb" id="topb" aria-label="Lên đầu trang">↑</button>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+  function f(n,d){return n.toLocaleString('vi-VN',{minimumFractionDigits:d,maximumFractionDigits:d})}
+
+  var bg=$('#burger'),nl=$('#navList');
+  bg.addEventListener('click',function(){nl.classList.toggle('show')});
+  $$('#navList a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('show')})});
+  var secs=$$('section[id]'),links=$$('#navList a');
+  function sync(){var y=window.scrollY+140,cur='';secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+    $('#topb').classList.toggle('show',window.scrollY>600);}
+  window.addEventListener('scroll',sync,{passive:true});sync();
+  $('#topb').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  $$('.dh').forEach(function(h){h.addEventListener('click',function(){h.parentNode.classList.toggle('open')})});
+
+  /* ── workload ── */
+  var W=[
+    [['Check quảng cáo',1,30],['Tìm concept',1,60],['Content ý tưởng',1,60],['Check đầu ra sản phẩm',2,20],['Check báo cáo sale',1,45]],
+    [['Trả lời tin nhắn',67,3],['Edit video',2,45],['Post ảnh &amp; video MXH',4,10],['Take care &amp; quay video khách',2,60],['Chuẩn bị đồ khách',2,20]],
+    [['Chụp hình (bộ)',2,120],['Retouch (ảnh)',20,10],['Dọn dẹp studio',1,30]],
+    [['Take care &amp; phụ setup',2,120],['Học retouch',1,120]]
+  ];
+  var NM=['Anh Minh','Bạn Sale + Edit','Bạn Photo','Bạn Tập sự'],wp=1;
+  function drawW(){
+    $('#wrows').innerHTML=W[wp].map(function(r,i){return '<div class="wrow"><span>'+r[0]+'</span><input type="number" min="0" step="1" data-i="'+i+'" data-k="1" value="'+r[1]+'"><input type="number" min="0" step="1" data-i="'+i+'" data-k="2" value="'+r[2]+'"><b>'+(r[1]*r[2])+'</b></div>'}).join('');
+    $$('#wrows input').forEach(function(el){el.addEventListener('input',function(){W[wp][+el.dataset.i][+el.dataset.k]=Math.max(0,+el.value||0);
+      el.parentNode.querySelector('b').textContent=W[wp][+el.dataset.i][1]*W[wp][+el.dataset.i][2];calcW()})});
+    calcW();
+  }
+  function calcW(){
+    var m=0;W[wp].forEach(function(r){m+=r[1]*r[2]});
+    var p=m/480*100,sc=Math.max(100,p);
+    $('#wbar').style.width=(p/sc*100)+'%';
+    $('#wline').style.left=(100/sc*100)+'%';
+    $('#wbar').style.background=p>100?'var(--alert)':(p>85?'var(--gold)':'var(--good)');
+    $('#wtxt').innerHTML='<b style="color:var(--cream)">'+f(m/60,1)+' giờ/ngày</b> · tải '+f(p,0)+'%';
+    var top=W[wp].slice().sort(function(a,b){return b[1]*b[2]-a[1]*a[2]})[0];
+    var msg;
+    if(p>100)msg='<b>'+NM[wp]+' đang quá tải '+f(p-100,0)+'%.</b> Việc ăn giờ nhất: <b>'+top[0]+'</b> ('+f(top[1]*top[2]/60,1)+' giờ). Giao thêm việc lúc này = việc cũ sẽ rơi.';
+    else if(p>85)msg='<b>'+NM[wp]+' gần kín tải.</b> Không còn chỗ cho việc phát sinh — mọi việc giao thêm cần bỏ bớt một việc cũ.';
+    else msg='<b>'+NM[wp]+' còn ~'+f((480-m)/60,1)+' giờ/ngày.</b> Đây là chỗ nhận việc chuyển từ người đang quá tải.';
+    $('#wmsg').innerHTML=msg;
+  }
+  $$('#wtabs button').forEach(function(b){b.addEventListener('click',function(){wp=+b.dataset.p;
+    $$('#wtabs button').forEach(function(x){x.classList.toggle('on',x===b)});drawW()})});
+  drawW();
+
+  /* ── task cards ── */
+  var K=['Tên đầu việc','Cách làm','Ai phụ trách','Không biết hỏi ai','Công cụ','Đầu ra tiêu chuẩn','Không đạt khi nào'];
+  var X=[
+    {v:['<b>Check báo cáo sale</b>','Đọc báo cáo 2–3 ngày/lần: tỉ lệ tin rác, lý do không chốt, phàn nàn của khách mới &amp; cũ','Anh Minh','—','Bảng báo cáo sale','3 lý do rớt khách lớn nhất + 1 việc sửa ngay','Quá 3 ngày chưa đọc · không có việc sửa đi kèm'],
+     s:['Đọc báo cáo, rút lý do rớt','Đếm được: % rác, 3 lý do','1 lần / 2–3 ngày','Có việc sửa đi kèm','Mỗi 2–3 ngày']},
+    {v:['<b>Edit &amp; post video MXH</b>','Edit theo template · đăng đúng khung giờ trên page &amp; TikTok','Bạn Sale + Edit','Anh Minh','Phần mềm edit · lịch đăng','Đúng số video/tuần · đúng template','Trễ lịch đăng · sai template'],
+     s:['Edit + đăng video','Số video/tuần','Vừa tải việc (phần 03)','Lên đúng lịch','Mỗi tuần']},
+    {v:['<b>Retouch ảnh</b>','Retouch theo preset &amp; checklist da, tóc, nền','Bạn Photo · Tập sự học kèm','Bạn Photo','Phần mềm hậu kỳ · preset','20 ảnh/ngày đạt checklist','Khách phản hồi lỗi · trễ hạn giao']
+     ,s:['Retouch theo preset','20 ảnh/ngày','Theo tay nghề thật','Đạt checklist','Hạn giao ảnh']}
+  ];
+  var SM=[['S','Cụ thể'],['M','Đo lường được'],['A','Khả thi'],['R','Kết quả cụ thể'],['T','Làm trong bao lâu']];
+  function drawT(i){
+    $('#tcard').innerHTML=K.map(function(k,j){return '<div class="tcf'+(j===6?' bad':'')+'"><div class="k"><i>0'+(j+1)+'</i>'+k+'</div><div class="v">'+X[i].v[j]+'</div></div>'}).join('');
+    $('#smart').innerHTML=SM.map(function(s,j){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span><em>'+X[i].s[j]+'</em></div>'}).join('');
+  }
+  $$('#tex button').forEach(function(b){b.addEventListener('click',function(){
+    $$('#tex button').forEach(function(x){x.classList.toggle('on',x===b)});drawT(+b.dataset.x)})});
+  drawT(0);
+
+  /* ── funnel ── */
+  var S={};
+  function fun(){
+    var tin=+$('#iTin').value,cr=+$('#iCr').value,mkt=+$('#iMkt').value,bo=+$('#iBo').value,ph=+$('#iPh').value,ng=+$('#iNg').value;
+    $('#vTin').textContent=tin;$('#vCr').textContent=f(cr,1);$('#vMkt').textContent=mkt;$('#vBo').textContent=bo;$('#vPh').textContent=ph;$('#vNg').textContent=ng;
+    var kh=tin*cr/100,sl=bo*ph*ng,p=kh/sl*100;
+    S={mkt:mkt,kh:kh,cr:cr,tin:tin};
+    $('#oKh').textContent=f(kh,0);$('#oSl').textContent=f(sl,0);
+    $('#oCt').textContent=f(mkt*1000/tin,1)+'k';$('#oCk').textContent=f(mkt*1000/kh,0)+'k';
+    $('#capBar').style.width=Math.min(100,p)+'%';$('#capBar').style.background=p>100?'var(--alert)':'';
+    $('#capTxt').textContent=f(p,0)+'%';$('#capTxt').style.color=p>100?'var(--alert)':'var(--gold)';
+    var plus=tin*0.5/100,m;
+    if(p>100)m='<b>Khách chốt vượt slot chụp '+f(kh-sl,0)+' khách.</b> Phễu không phải chỗ nghẽn — <b>công suất chụp</b> mới là chỗ nghẽn. Tập sự cần lên tay, và photo cần được gỡ bớt việc không phải chụp.';
+    else m='Còn <b>'+f(sl-kh,0)+' slot</b> trống. Mỗi +0,5 điểm chuyển đổi = <b>+'+f(plus,0)+' khách/tháng</b> với cùng '+mkt+'tr marketing.';
+    $('#fMsg').innerHTML=m;inv();
+  }
+  ['#iTin','#iCr','#iMkt','#iBo','#iPh','#iNg'].forEach(function(id){$(id).addEventListener('input',fun)});
+
+  /* ── invest ── */
+  function inv(){
+    var nam=+$('#iNam').value,gia=+$('#iGia').value,th=nam*12;
+    $('#vNam').textContent=nam;$('#vGia').textContent=f(gia,1);
+    var p1=6/S.mkt*100,p2=18/S.mkt*100,m1=6000/th,m2=18000/th,mk=S.mkt*1000;
+    $('#b1').style.width=Math.min(100,p1)+'%';$('#b2').style.width=Math.min(100,p2)+'%';
+    $('#t1').textContent=f(p1,0)+'%';$('#t2').textContent=f(p2,0)+'%';
+    $('#b3').style.width=Math.min(100,m1/mk*100)+'%';$('#b4').style.width=Math.min(100,m2/mk*100)+'%';
+    $('#t3').textContent=f(m1,0)+'k';$('#t4').textContent=f(m2,0)+'k';
+    var khHv=Math.ceil(18/gia);
+    $('#iMsg').innerHTML='Mắt xích = <b>'+f(18/S.mkt,1)+' tháng marketing</b> — nhưng marketing tiêu xong là hết, thẻ việc <b>dùng suốt '+nam+' năm</b>: chỉ <b>~'+f(m2,0)+'k/tháng</b>. Bằng doanh thu của <b>'+khHv+' khách</b> (giá '+f(gia,1)+'tr/khách) — tức chỉ cần chuyển đổi <b>+'+f(khHv/S.tin*100,2)+' điểm</b> trong một tháng.';
+  }
+  ['#iNam','#iGia'].forEach(function(id){$(id).addEventListener('input',inv)});
+  fun();
+
+  /* ── self test ── */
+  var tqs=$$('[data-t]'),tres=$('#tres');
+  tqs.forEach(function(q){q.addEventListener('click',function(){q.classList.toggle('on');
+    var n=$$('[data-t].on').length,h='<span class="trh">Kết quả · '+n+'/4</span>';
+    if(n<=1)h+='Đây là lần đầu Ohayo dựng bản đồ việc. <b>Kiến tạo Mắt xích</b> hợp hơn — tôi lắp cùng, thử trên đội thật, sửa ngay trong tuần.';
+    else if(n<=2)h+='Anh tự đi được một phần. <b>Mắt xích</b> vẫn chắc hơn ở khâu giao – nhận việc — chỗ đội dễ quay về thói quen cũ nhất.';
+    else h+='<b>Khai thông</b> là đủ. Anh và đội đã quen chạy theo quy trình — thứ anh cần là khung và thứ tự đúng.';
+    tres.innerHTML=h;})});
+})();
+</script>
+
+</body>
+</html>
